@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ReceptionBot.Views.ButtonsListView">
+    <ScrollViewer >
+        <StackPanel>
+            <TextBlock Text="{Binding Header}" />
+            <Button Width="150" Margin="10 10 10 10" Content="Создать кнопку" Command="{Binding $parent[Window].DataContext.EditButton}" />
+            <ItemsControl Items="{Binding ButtonsList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="200" Content="{Binding Name}"
+                        Command="{Binding $parent[Window].DataContext.EditButton}"
+                        CommandParameter="{Binding .}" />
+                        <!-- <TextBlock>Hello</TextBlock> -->
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

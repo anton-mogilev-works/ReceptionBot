@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ReceptionBot.Views.ButtonPropertyView">
+             
+            <StackPanel >
+                <TextBlock>Название кнопки:</TextBlock>
+                <TextBox
+                    AcceptsReturn="True"
+                    Width="200"
+                    Margin="0 0 0 10"
+                    Text="{Binding Button.Name}"
+                    Watermark="Название кнопки"
+                    HorizontalAlignment="Left"
+                />
+                
+                <TextBlock>Ответ на нажатие кнопки:</TextBlock>
+                <TextBox 
+                    AcceptsReturn="True"
+                    Width="450"
+                    Height="400"
+                    Margin="0 0 0 10"
+                    Text="{Binding Button.Text}"
+                    HorizontalAlignment="Left"
+                    Watermark="Ответ на нажатие кнопки"
+                    TextWrapping="Wrap"
+                />
+
+                <!-- <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                    <Button Content="Добавить изображение" Command="{Binding AddImageButton}" ></Button>                
+                </StackPanel> -->
+
+                <StackPanel Spacing="10" Orientation="Horizontal">
+                    <Button Content="Сохранить" Foreground="White" Background="Green" Command="{Binding SaveButton}" ></Button>
+                    <Button Content="Отменить" Foreground="White" Background="Orange" Command="{Binding CancelButton}"></Button>
+                    <Button Content="Удалить" Foreground="White" Background="Red" Command="{Binding DeleteButton}"></Button>
+                </StackPanel>
+                
+
+            </StackPanel>
+</UserControl>

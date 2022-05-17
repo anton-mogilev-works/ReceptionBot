@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ReceptionBot.Views.HelpGuideView">
+  <ScrollViewer>
+        <StackPanel Spacing="5">
+            <TextBlock HorizontalAlignment="Center" Width="500" FontSize="20" FontStyle="Oblique">Инструкция по управлению ботом</TextBlock>
+             
+            <TextBox TextWrapping="Wrap" Width="500" BorderBrush="White" IsReadOnly="True">
+В данной версии приложения возможно только создание кнопок в Telegram-боте с заданными ответами на каждую кнопку.
+
+1. Если у вас нет бота - создайте его с помощью служебного бота @BotFather.
+Для этого введите команду "/newbot" и отвечайте на вопросы до завершения создания бота и выдачи вам токена управления ботом.
+
+2. Когда у вас появился токен введите его в разделе настроек.
+
+3. После этого, нажмите кнопку включения бота в правой панели. Если токен введен верно то в нижней панели будет сообщение о том что бот начал принимать сообщения.
+В случае неверного ввода токена будет указано сообщение об ошибке и остановке работы бота.
+
+Журналирование общения с пользователями в данной версии не реализовано.
+
+В следующих версиях будет добавлено управление командами.
+
+            </TextBox>
+        </StackPanel>       
+    </ScrollViewer>
+</UserControl>

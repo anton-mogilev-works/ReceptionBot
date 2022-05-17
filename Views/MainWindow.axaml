@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ReceptionBot.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="ReceptionBot.Views.MainWindow"
+        Icon="/Assets/ReceptionBot.ico"
+        Title="ReceptionBot">    
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="1"></RowDefinition>
+            <RowDefinition Height="80"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="1"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="1" CornerRadius="2" BorderBrush="Black" Padding="4" Margin="3" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="4">
+            <Menu >
+                <MenuItem Header="Команды" IsEnabled="False" Command="{Binding ShowCommands}" />
+                <MenuItem Header="Кнопки" Command="{Binding ShowButtons}" />
+                <MenuItem Header="Настройки" Command="{Binding ShowSettings}" />
+                <MenuItem Header="Журнал" Command="{Binding ShowJournal}" />
+                <MenuItem Header="Помощь" Command="{Binding HelpGuide}" />                
+                <MenuItem Header="О программе" Command="{Binding ShowAbout}" />
+            </Menu>
+        </Border>
+               
+        <Border  BorderThickness="1" CornerRadius="2" BorderBrush="Black" Padding="4" Margin="3" Grid.Row="1" Grid.Column="0">
+            <!-- <views:PropertiesListView DataContext="{Binding propertiesListViewModel}"/> -->
+            <ContentControl Content="{Binding LeftPanelViewModel}"/>
+        </Border>
+        <GridSplitter Background="Gray" ResizeDirection="Columns" Grid.Row="1" Grid.Column="1"/>        
+        <Border  BorderThickness="1" CornerRadius="2" BorderBrush="Black" Padding="4" Margin="3" Grid.Row="1" Grid.Column="2">
+            <ScrollViewer >
+                <ContentControl Content="{Binding CentralPanelViewModel}"/>
+            </ScrollViewer>
+        </Border>
+        <Border BorderThickness="1" CornerRadius="2" BorderBrush="Black" Padding="4" Margin="3" Grid.Row="1" Grid.Column="3">
+            <ScrollViewer >
+                <ContentControl Content="{Binding RightPanelViewModel}"/>
+            </ScrollViewer>
+        </Border>
+        <GridSplitter Background="Gray" ResizeDirection="Rows" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>   
+        <!-- <Border BorderThickness="0" CornerRadius="2" BorderBrush="Black" Padding="4" Margin="3" Grid.Row="2" Grid.Column="0"  Grid.ColumnSpan="4"> -->
+        <ScrollViewer Padding="0" Margin="0" Grid.Row="3" Grid.Column="0"  Grid.ColumnSpan="4">
+            <TextBlock Padding="10 5 0 0" Text="{Binding MessageText}"></TextBlock>
+        </ScrollViewer>
+        <!-- </Border>  -->
+    </Grid>
+</Window>
