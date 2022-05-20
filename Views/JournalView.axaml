@@ -10,6 +10,7 @@
             
             <Button HorizontalAlignment="Right" Command="{Binding ClearJournal}">Очистить</Button>
             
+            <!--
             <DataGrid Items="{Binding JournalRecords}">                
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Дата и время" 
@@ -19,8 +20,8 @@
                                 Binding="{Binding Text}" 
                                 Width="*" />
                 </DataGrid.Columns>
-
             </DataGrid>
+            -->
         </StackPanel>
     </ScrollViewer>
 </UserControl>
