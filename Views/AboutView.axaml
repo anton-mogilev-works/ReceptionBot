@@ -9,7 +9,7 @@
             <TextBlock HorizontalAlignment="Center" FontSize="20" FontStyle="Oblique">Reception Bot</TextBlock>
             <TextBlock FontStyle="Italic">Версия 0.1-alfa</TextBlock>
             <TextBox TextWrapping="Wrap" BorderBrush="White" IsReadOnly="True">
-Приложение управления справочным телеграм ботом
+Приложение управления справочным телеграм-ботом
 Разработчик: Антон Могилёв
 Github: https://github.com/anton-mogilev-works/ReceptionBot
 E-mail: anton.mogilev.works@gmail.com
